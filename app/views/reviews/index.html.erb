@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="reviews-index">
+    <div class="row">
+      <div class="col-xs-12 col-md-offset-3 col-md-6 two-buttons">
+        <ul class="list-inline">
+          <li>
+            <%= link_to "Back", restaurant_path(@restaurant), class: "btn btn-danger" ,id: "button-back"%>
+          </li>
+          <li>
+            <%= link_to "Add a Review", new_restaurant_review_path(@restaurant), class: "btn btn-danger", id: "button-review"%>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <% @reviews.each do |review| %>
+      <div class="row">
+        <div class="col-xs-12 col-md-offset-3 col-md-6">
+          <h2>``<i><%= review.content %>``</i></h2>
+          <p>
+            <b>Rating :</b>
+            <% review.rating.times do %>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+            <% end %>
+
+          </p>
+          <hr>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

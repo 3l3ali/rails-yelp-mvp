@@ -1,0 +1,20 @@
+#button-back {
+  border-radius: 15px;
+  width: 140px;
+}
+
+#button-review {
+  @extend #button-back;
+}
+
+.two-buttons {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.reviews-new {
+  margin-top: 50px;
+}
+
